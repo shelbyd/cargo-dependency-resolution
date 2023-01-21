@@ -1,0 +1,17 @@
+[package]
+name = "dependency-resolution"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[workspace]
+members = [
+  "child",
+]
+
+[dependencies]
+fastcrypto = "0.1.2"
+
+[patch.crates-io]
+curve25519-dalek = { git = "https://github.com/shelbyd/curve25519-dalek", branch = "zeroize-patch" }
